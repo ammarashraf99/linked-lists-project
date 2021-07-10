@@ -1,15 +1,12 @@
-/******************************************************************************
-
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby,
-C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
-Code, Compile, Run and Debug online from anywhere in world.
-
-*******************************************************************************/
+/*
+عمار اشرف عمار محمد           sec:3     BN:7
+محمود محمد نجيب يونس رمضان   sec:4     BN:4
+محمد احمد محمد ابو سعدة      sec:3     BN:31
+*/
 #include <stdio.h>
 #include <stdlib.h> //for malloc & free functions
 #include <time.h>
-#define N 10
+#define N 300
 /*
  * We will use head pointer to always point at the beginning of the list
  * and the last element of the list will always be pointing to NULL
@@ -126,10 +123,10 @@ void insertAtFirst(struct student_data *data)
 	if(head == NULL){
 		tail = link;
 		link->next = NULL;
-	}
-
+	}else
+    	link->next = head;
 	//point the next pointer to the old head node
-	link->next = head;
+
 
 	//point the head to the new first node
 	head = link;
@@ -306,7 +303,7 @@ void main(void)
 	student_arr = create_dynarr(N);
 
 	start = clock();
-	student_arr = insert(N,student_arr,N);
+	student_arr = insert(N,student_arr,20);
 	finish = clock();
 
 	printf("time spent with array is %d \n",finish-start);
